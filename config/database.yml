@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: magic_book_development
+  database: magic_book_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: magic_book_production
+  database: magic_book_pro
   username: magic_book
   password: <%= ENV['MAGIC_BOOK_DATABASE_PASSWORD'] %>
