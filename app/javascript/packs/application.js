@@ -13,6 +13,7 @@ import "@fortawesome/fontawesome-free/js/all"
 import $ from 'jquery'
 window.jQuery = $;
 window.$ = $;
+require("@nathanvda/cocoon")
 
 // scss
 import "../stylesheets/application"
