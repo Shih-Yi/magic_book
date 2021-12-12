@@ -4,10 +4,9 @@ import './tabset';
 import WOW from "wow.js/dist/wow";
 window.WOW = WOW
 
-/*!
- * tabset plugins
- */
-!function(t,s){"use strict";function a(t,s){this.$holder=t,this.options=s,this.init()}a.prototype={init:function(){this.$tabLinks=this.$holder.find(this.options.tabLinks),this.setStartActiveIndex(),this.setActiveTab(),this.options.autoHeight&&(this.$tabHolder=t(this.$tabLinks.eq(0).attr(this.options.attrib)).parent())},setStartActiveIndex:function(){var t,s=this.getClassTarget(this.$tabLinks),a=s.filter("."+this.options.activeClass),i=this.$tabLinks.filter("["+this.options.attrib+'="'+location.hash+'"]');this.options.checkHash&&i.length&&(a=i),t=s.index(a),this.activeTabIndex=this.prevTabIndex=-1===t?this.options.defaultTab?0:null:t},setActiveTab:function(){var s=this;this.$tabLinks.each(function(a,i){var e=t(i),n=s.getClassTarget(e),o=t(e.attr(s.options.attrib));a!==s.activeTabIndex?(n.removeClass(s.options.activeClass),o.addClass(s.options.tabHiddenClass).removeClass(s.options.activeClass)):(n.addClass(s.options.activeClass),o.removeClass(s.options.tabHiddenClass).addClass(s.options.activeClass)),s.attachTabLink(e,a)})},attachTabLink:function(t,s){var a=this;t.on(this.options.event+".tabset",function(t){t.preventDefault(),a.activeTabIndex===a.prevTabIndex&&a.activeTabIndex!==s&&(a.activeTabIndex=s,a.switchTabs())})},resizeHolder:function(t){var s=this;t?(this.$tabHolder.height(t),setTimeout(function(){s.$tabHolder.addClass("transition")},10)):s.$tabHolder.removeClass("transition").height("")},switchTabs:function(){var t=this,s=this.$tabLinks.eq(this.prevTabIndex),a=this.$tabLinks.eq(this.activeTabIndex),i=this.getTab(s),e=this.getTab(a);i.removeClass(this.options.activeClass),t.haveTabHolder()&&this.resizeHolder(i.outerHeight()),setTimeout(function(){t.getClassTarget(s).removeClass(t.options.activeClass),i.addClass(t.options.tabHiddenClass),e.removeClass(t.options.tabHiddenClass).addClass(t.options.activeClass),t.getClassTarget(a).addClass(t.options.activeClass),t.haveTabHolder()?(t.resizeHolder(e.outerHeight()),setTimeout(function(){t.resizeHolder(),t.prevTabIndex=t.activeTabIndex},t.options.animSpeed)):t.prevTabIndex=t.activeTabIndex},this.options.autoHeight?this.options.animSpeed:1)},getClassTarget:function(t){return this.options.addToParent?t.parent():t},getActiveTab:function(){return this.getTab(this.$tabLinks.eq(this.activeTabIndex))},getTab:function(s){return t(s.attr(this.options.attrib))},haveTabHolder:function(){return this.$tabHolder&&this.$tabHolder.length},destroy:function(){var s=this;this.$tabLinks.off(".tabset").each(function(){var a=t(this);s.getClassTarget(a).removeClass(s.options.activeClass),t(a.attr(s.options.attrib)).removeClass(s.options.activeClass+" "+s.options.tabHiddenClass)}),this.$holder.removeData("Tabset")}},t.fn.tabset=function(s){return s=t.extend({activeClass:"active",addToParent:!1,autoHeight:!1,checkHash:!1,defaultTab:!0,animSpeed:500,tabLinks:"a",attrib:"href",event:"click",tabHiddenClass:"js-tab-hidden"},s),s.autoHeight=s.autoHeight&&t.support.opacity,this.each(function(){var i=t(this);i.data("Tabset")||i.data("Tabset",new a(i,s))})}}(jQuery,jQuery(window));
+import Filterizr from 'filterizr'
+window.Filterizr = Filterizr
+Filterizr.installAsJQueryPlugin($);
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
@@ -36,6 +35,9 @@ jQuery(window).on('load', function() {
 	"use strict";
 
 	initPreLoader();
+	$(function () {
+		$('.masonry-list').filterizr();
+	});
 });
 
 
