@@ -1,5 +1,6 @@
 import 'bootstrap/dist/js/bootstrap';
 import "slick-carousel/slick/slick";
+import './tabset';
 import WOW from "wow.js/dist/wow";
 window.WOW = WOW
 
