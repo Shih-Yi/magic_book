@@ -17,6 +17,7 @@ require("@nathanvda/cocoon")
 
 // scss
 import "../stylesheets/application"
+import '../stylesheets/users/sessions'
 
 // custom js
 import "./main"
