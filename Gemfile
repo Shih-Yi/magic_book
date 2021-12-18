@@ -29,6 +29,9 @@ gem 'carrierwave', '2.1.1'
 gem 'mini_magick'
 gem 'cocoon'
 
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '4.8.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
