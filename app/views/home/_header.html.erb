@@ -271,7 +271,7 @@
               <!-- Login Links -->
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to current_user.user_name, root_path %>
+                  <%= link_to current_user.email, root_path %>
                 </li>
                 <li>
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
@@ -287,7 +287,7 @@
               <!-- mobile view -->
               <% if user_signed_in? %>
                 <li class="nav-item d-md-none">
-                  <%= link_to current_user.user_name, root_path, class: "nav-link" %>
+                  <%= link_to current_user.email, root_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item d-md-none">
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
