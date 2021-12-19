@@ -18,7 +18,7 @@ require('admin-lte');
 
 // scss
 import "../stylesheets/application"
-import '../stylesheets/users/sessions'
+import '../stylesheets/sessions'
 
 // custom js
 import "./main"
