@@ -1,0 +1,13 @@
+<div class="content-wrapper px-2 py-2">
+  <p> Book </p>
+  <% @books.each do |book| %>
+    <div class="post_warpper">
+      <h2 class="title"><%= link_to book.title, book %></h2>
+      <% if book.attachments.present? %>
+        <% book.attachments.each do |i| %>
+          <%= link_to image_tag(i.attachment.url(:small)), i.attachment.url %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
