@@ -13,11 +13,11 @@ import "@fortawesome/fontawesome-free/js/all"
 import $ from 'jquery'
 window.jQuery = $;
 window.$ = $;
-
+require("@nathanvda/cocoon")
 require('admin-lte');
 
 // scss
-import "../stylesheets/user_application"
+import "../../stylesheets/user/user_application"
 
 // custom js
 
