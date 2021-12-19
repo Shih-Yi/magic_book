@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :books
 
   namespace :user do
+    root 'books#index'
     resources :books
   end
 end
