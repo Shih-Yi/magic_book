@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   resources :home
   resources :books
+
+  namespace :user do
+    resources :books
+  end
 end
