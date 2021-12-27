@@ -18,4 +18,8 @@ Rails.application.routes.draw do
     root 'books#index'
     resources :books
   end
+
+  namespace :admin do
+    root 'home#index'
+  end
 end

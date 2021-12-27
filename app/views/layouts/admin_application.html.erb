@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MagicBook</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'admin/admin_application' %>
+    <%= javascript_pack_tag 'admin/admin_application' %>
+  </head>
+
+  <body class="sidebar-mini layout-fixed layout-navbar-fixed" cz-shortcut-listen="true" style="height: auto;">
+    <div class="wrapper">
+      <%= render 'shared/admin/navbar' %>
+      <%= render 'shared/admin/sidebar' %>
+      <%= render 'shared/message' %>
+      <%= yield %>
+      <%= render 'shared/admin/footer' %>
+    </div>
+  </body>
+</html>
