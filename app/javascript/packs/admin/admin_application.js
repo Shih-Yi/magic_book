@@ -15,7 +15,9 @@ window.jQuery = $;
 window.$ = $;
 require("@nathanvda/cocoon")
 require('admin-lte');
-
+require("datatables.net-buttons-bs4");
+require('datatables.net-responsive-bs4');
+require('datatables.net-bs4');
 // scss
 import "../../stylesheets/admin/admin_application"
 
