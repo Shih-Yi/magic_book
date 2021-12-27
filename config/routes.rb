@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+  devise_for :admin_users, controllers: {
+    sessions: 'admin/devise/sessions',
+  }
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
