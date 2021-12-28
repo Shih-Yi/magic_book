@@ -15,6 +15,11 @@ window.jQuery = $;
 window.$ = $;
 require("@nathanvda/cocoon")
 require('admin-lte');
+require("datatables.net-buttons-bs4");
+require('datatables.net-responsive-bs4');
+require('datatables.net-bs4');
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+window.Swal = Swal
 
 // scss
 import "../../stylesheets/user/user_application"

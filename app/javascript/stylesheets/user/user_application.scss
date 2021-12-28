@@ -2,6 +2,10 @@
 
 // plugins
 @import "admin-lte";
+@import "datatables.net-responsive-bs4";
+@import "datatables.net-buttons-bs4";
+@import 'datatables.net-bs4';
+@import 'sweetalert2/src/sweetalert2.scss';
 
 body {
   font-family: sans-serif;
@@ -118,4 +122,9 @@ body {
 .remove-image:active {
   border: 0;
   transition: all .2s ease;
+}
+
+// Toasts
+#toastsContainerTopRight {
+  width: 300px;
 }
