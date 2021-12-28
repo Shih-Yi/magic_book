@@ -1,0 +1,17 @@
+<%= form_for [:user, @book] do |f|%>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.fields_for :attachments do |task| %>
+    <%= render 'attachment_fields', :f => task %>
+  <% end %>
+  <p class="text-right">
+    <%= link_to_add_association "新增檔案", f, :attachments %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
