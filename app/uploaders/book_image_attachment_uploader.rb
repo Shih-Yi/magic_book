@@ -10,9 +10,9 @@ class BookImageAttachmentUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  version :small do
-    process resize_to_fit: [250, 250]
-  end
+  # version :small do
+  #   process resize_to_fit: [250, 250]
+  # end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

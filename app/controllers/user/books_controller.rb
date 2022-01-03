@@ -19,8 +19,10 @@ class User::BooksController < User::BaseController
 
   def create
     @book = Book.new(book_params)
+    @book.user = current_user
     if @book.save!
-      redirect_to books_path
+      flash[:success] = "Create Success"
+      redirect_to user_books_path
     else
       render :action => :new
     end
