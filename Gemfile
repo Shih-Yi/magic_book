@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Fog for Google Cloud Platform
+gem 'fog-google'
+# upload images
 gem 'carrierwave', '2.1.1'
 gem 'mini_magick'
 gem 'cocoon'
