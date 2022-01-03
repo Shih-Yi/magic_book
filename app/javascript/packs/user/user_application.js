@@ -25,6 +25,7 @@ window.Swal = Swal
 import "../../stylesheets/user/user_application"
 
 // custom js
+import "./main"
 
 Rails.start()
 // Turbolinks.start()

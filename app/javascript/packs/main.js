@@ -230,14 +230,7 @@ function initSlickSlider() {
 		}
 		]
 	});
-	jQuery('.product-slider').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		centerPadding: '0',
-		asNavFor: '.pagg-slider'
-	});
+
 	jQuery('.pagg-slider').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
