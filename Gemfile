@@ -32,6 +32,9 @@ gem 'carrierwave', '2.1.1'
 gem 'mini_magick'
 gem 'cocoon'
 
+# environment settings
+gem 'config'
+
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '4.8.0'
 
