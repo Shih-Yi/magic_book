@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "admin-lte";
 @import "~wow.js/css/site";
 
 .mt-product1 .links,
@@ -8453,6 +8452,7 @@ a:hover {
 }
 
 .slick-list {
+	background-color: white;
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -8654,7 +8654,7 @@ a:hover {
 /* Dots */
 
 .slick-dotted.slick-slider {
-	margin-bottom: 30px;
+	// margin-bottom: 30px;
 }
 
 .slick-dots {
