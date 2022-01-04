@@ -7,6 +7,10 @@
 @import 'datatables.net-bs4';
 @import 'sweetalert2/src/sweetalert2.scss';
 
+// custom
+@import "../../stylesheets/user/sidebar";
+@import "../../stylesheets/user/books";
+
 body {
   font-family: sans-serif;
   background-color: #eeeeee;

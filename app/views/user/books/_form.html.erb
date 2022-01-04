@@ -1,12 +1,12 @@
 <%= form_for [:user, @book] do |f|%>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :標題 %><br>
+    <%= f.text_field :title, class: 'form-text' %>
   </p>
 
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description, cols: 30, rows: 5 %>
+    <%= f.label :描述 %><br>
+    <%= f.text_area :description, class: 'form_field form-area' %>
   </p>
   <br/>
   <hr/>
@@ -14,8 +14,8 @@
   <%= f.fields_for :attachments do |task| %>
     <%= render 'attachment_fields', :f => task %>
   <% end %>
-  <p class="text-right">
-    <%= link_to_add_association "新增檔案", f, :attachments %>
+  <p class="text-left">
+    <%= link_to_add_association "新增繪本檔案", f, :attachments %>
   </p>
 
   <p>

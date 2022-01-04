@@ -1,20 +1,40 @@
 <div class='nested-fields'>
   <h4>繪本檔案</h4>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <!-- image -->
   <div class="form-group">
-    <% if f.object.image.present? %>
-      已上傳檔案 <%= link_to f.object.description, f.object.image.url, :target => "_blank" %>
-    <% end %>
-    <br/>
-    <br/>
-    <%= f.label :image %>
-    <%= f.file_field :image, :class => "form-control" %>
+    <%= f.label :圖片 %>
+    <label class="uploader">
+        <span class="icon"><i class="fas fa-upload fa-2x"></i></span>
+        <span class="placeholder">
+          <% if f.object.image.present? %>
+            已上傳檔案 <%= link_to f.object.image.identifier, f.object.image.url, :target => "_blank" %>
+          <% else %>
+            請上傳檔案
+          <% end %>
+        </span>
+        <%= f.file_field :image, :class => "form-control" %>
+    </label>
   </div>
-  <%= link_to_remove_association "remove task", f %>
+  <!-- description -->
+  <div class="form-group">
+    <%= f.label :描述 %>
+    <%= f.text_area :description, class: 'form_field form-area' %>
+  </div>
+  <%= link_to_remove_association "刪除此繪本檔案", f %>
   <br/>
   <br/>
   <hr/>
 </div>
+
+<script>
+  document.querySelectorAll('.uploader input[type="file"]').forEach((el) =>
+    el.addEventListener("change", (ev) => {
+      if (ev.target.files && ev.target.files.length) {
+        const text = Array.from(ev.target.files)
+          .map((x) => x.name)
+          .join(", ");
+        el.parentNode.querySelector(".placeholder").innerText = text;
+      }
+    })
+  );
+</script>

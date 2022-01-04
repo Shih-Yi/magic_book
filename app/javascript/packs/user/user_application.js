@@ -23,7 +23,6 @@ window.Swal = Swal
 
 // scss
 import "../../stylesheets/user/user_application"
-import "../../stylesheets/user/sidebar"
 
 // custom js
 import "./main"
