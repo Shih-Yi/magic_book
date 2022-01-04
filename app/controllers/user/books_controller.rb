@@ -1,5 +1,5 @@
 class User::BooksController < User::BaseController
-  before_action :set_book, only: [:edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = current_user.books.all
@@ -10,7 +10,6 @@ class User::BooksController < User::BaseController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def new
