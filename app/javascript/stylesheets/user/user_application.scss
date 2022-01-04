@@ -3721,7 +3721,7 @@ body {
 }
 
 .mt-product-detial .pagg-slider .slick-next:before {
-	content: "\f054";
+	content: "→";
 }
 
 .mt-product-detial .detial-holder {
@@ -5248,11 +5248,11 @@ body {
 }
 
 .slick-prev:before {
-	content: "â†";
+	content: '←' !important;
 }
 
 [dir="rtl"] .slick-prev:before {
-	content: "â†’";
+	content: '←';
 }
 
 .slick-next {
@@ -5265,11 +5265,11 @@ body {
 }
 
 .slick-next:before {
-	content: "â†’";
+	content: '→';
 }
 
 [dir="rtl"] .slick-next:before {
-	content: "â†";
+	content: '→';
 }
 
 /* Dots */

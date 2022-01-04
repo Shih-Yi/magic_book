@@ -7,9 +7,29 @@ $(function () {
 })
 
  // page init
-jQuery(function(){
+ jQuery(function(){
 	"use strict";
-	// SlickSlider init
-
-		jQuery(".product-slider").slick();
+	initSlickSlider();
 });
+
+ // page init
+ function initSlickSlider() {
+
+	jQuery(".product-slider").slick();
+
+	jQuery('.pagg-slider').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		centerPadding: '0',
+		asNavFor: '.product-slider',
+		focusOnSelect: true,
+		responsive: [
+		{
+		  breakpoint: 1024,
+		  settings: {
+		    slidesToShow: 3,
+		  }
+		}
+		]
+	});
+};
