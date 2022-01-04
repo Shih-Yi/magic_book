@@ -10,6 +10,6 @@ class Book < ApplicationRecord
 
   # public instance methods ...................................................
   def cover_image
-    attachments.first.attachment.url
+    attachments.first.image.url
   end
 end

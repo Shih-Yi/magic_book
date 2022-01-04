@@ -28,6 +28,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :remove_images, :images => [], :attachments_attributes => [:id, :attachment, :description, :_destroy])
+    params.require(:book).permit(:title, :remove_images, :images => [], :attachments_attributes => [:id, :image, :description, :_destroy])
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_174925) do
+ActiveRecord::Schema.define(version: 2022_01_04_092456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(version: 2021_12_28_174925) do
 
   create_table "book_image_attachments", force: :cascade do |t|
     t.integer "book_id"
-    t.string "attachment"
+    t.string "image"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_type"
+    t.string "image_size"
     t.index ["book_id"], name: "index_book_image_attachments_on_book_id"
   end
 

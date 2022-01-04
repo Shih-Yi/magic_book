@@ -18,7 +18,7 @@
                         <div class="product-slider">
                             <% @book.attachments.each do |attachment| %>
                                 <div class="slide">
-                                    <img src="<%= attachment.attachment.url %>" alt="image descrption">
+                                    <img src="<%= attachment.image.url %>" alt="image descrption">
                                 </div>
                                 <% end %>
                         </div>
@@ -26,7 +26,7 @@
                         <!-- Pagg Slider of the Page -->
                         <ul class="list-unstyled slick-slider pagg-slider">
                             <% @book.attachments.each do |attachment| %>
-                                <li><div class="img"><img src="<%= attachment.attachment.url %>" alt="image description"></div></li>
+                                <li><div class="img"><img src="<%= attachment.image.url %>" alt="image description"></div></li>
                             <% end %>
                         </ul>
                         <!-- Pagg Slider of the Page end -->

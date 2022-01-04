@@ -1,5 +1,5 @@
 class BookImageAttachment < ApplicationRecord
-  mount_uploader :attachment, BookImageAttachmentUploader
+  mount_uploader :image, BookImageAttachmentUploader
   # relationships .............................................................
   belongs_to :book
 

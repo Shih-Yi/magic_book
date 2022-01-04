@@ -50,7 +50,7 @@ class User::BooksController < User::BaseController
   end
 
   def book_params
-    params.require(:book).permit(:title, :description, :images => [], :attachments_attributes => [:id, :attachment, :description, :_destroy])
+    params.require(:book).permit(:title, :description, :images => [], :attachments_attributes => [:id, :image, :description, :_destroy])
   end
 
 end
