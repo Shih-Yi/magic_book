@@ -7098,7 +7098,7 @@ a:hover {
 }
 
 .mt-product-detial .pagg-slider .slick-next:before {
-	content: "\f054";
+	content: "→";
 }
 
 .mt-product-detial .detial-holder {
@@ -8633,7 +8633,7 @@ a:hover {
 }
 
 .slick-prev:before {
-	content: "←";
+	content: "←" !important;
 }
 
 [dir="rtl"] .slick-prev:before {
