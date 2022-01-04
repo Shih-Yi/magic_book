@@ -6996,6 +6996,8 @@ a:hover {
 	overflow: hidden;
 	padding: 0 0 25px;
 	background: #f6f6f6;
+	height: 100%;
+	margin: 0;
 }
 
 .mt-product-detial .slider {
@@ -14458,7 +14460,7 @@ a:focus {
 		margin: 3px 7px 0 0;
 	}
 
-	#mt-footer .col-xs-12.text-right {
+	#mt-footer .col-12.text-right {
 		text-align: left;
 	}
 

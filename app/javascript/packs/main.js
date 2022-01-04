@@ -92,6 +92,8 @@ function initSlickSlider() {
 		adaptiveHeight: true
 	});
 
+	jQuery(".product-slider").slick();
+
 	jQuery('.tabs-sliderlg').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
