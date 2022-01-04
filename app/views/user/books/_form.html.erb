@@ -6,8 +6,10 @@
 
   <p>
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description, cols: 30, rows: 5 %>
   </p>
+  <br/>
+  <hr/>
 
   <%= f.fields_for :attachments do |task| %>
     <%= render 'attachment_fields', :f => task %>
