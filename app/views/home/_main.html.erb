@@ -18,7 +18,9 @@
                             <div class="mt-product1 large">
                                 <!-- box start here -->
                                 <div class="box">
-                                    <img alt="image description" src=<%= book.cover_image %>>
+                                    <a href="<%= book_path(id: book.id ) %>" target="_blank">
+                                       <img alt="image description" src="<%= book.cover_image %>">
+                                    </a>
                                     <%# <ul class="mt-stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
