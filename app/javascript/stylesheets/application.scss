@@ -8409,6 +8409,9 @@ a:hover {
 	overflow: hidden;
 	list-style: none;
 	position: relative;
+	.box {
+		height: 225px;
+	}
 }
 
 #product-masonry .masonry-list:after {
