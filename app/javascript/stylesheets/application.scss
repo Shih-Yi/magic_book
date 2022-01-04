@@ -8352,7 +8352,7 @@ a:hover {
 
 #product-masonry {
 	overflow: hidden;
-	margin: 0 0 150px;
+	margin: 80px 0 60px;
 }
 
 #product-masonry #product-filter {
@@ -8425,12 +8425,12 @@ a:hover {
 }
 
 #product-masonry .masonry-list > li {
-	width: 25%;
+	width: 24.8%;
 	float: left;
 	padding: 0 10px 30px;
 	text-align: center;
-	border-bottom: 1px solid #d7d7d7;
-	border-right: 1px solid #d7d7d7;
+	// border-bottom: 1px solid #d7d7d7;
+	// border-right: 1px solid #d7d7d7;
 }
 
 #product-masonry .masonry-list .mt-product1 {
@@ -13877,7 +13877,7 @@ a:focus {
 	}
 
 	#product-masonry {
-		margin: 0 0 100px;
+		margin: 50px 0 50px;
 	}
 
 	#product-masonry .masonry-list > li {
@@ -15225,6 +15225,10 @@ a:focus {
 }
 
 @media only screen and (max-width: 479px) {
+	#product-masonry {
+    	margin: 50px 0 50px;
+	}
+   
 	.banner-1 .holder {
 		padding: 15px;
 	}
