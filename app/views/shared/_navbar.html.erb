@@ -29,7 +29,7 @@
           <nav id="nav">
             <ul>
               <li>
-                <a class="" href="/">HOME <i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+                <a class="nav-item d-none d-md-inline-block" href="/">HOME <i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
                 <%# <div class="s-drop">
                   <ul>
                     <li><a href="homepage1.html">Homepage1</a></li>
@@ -270,20 +270,20 @@
               </li>
               <!-- Login Links -->
               <% if user_signed_in? %>
-                <li>
+                <li class="nav-item d-none d-md-inline-block">
                   <%= link_to current_user.email, root_path %>
                 </li>
-                <li>
+                <li class="nav-item d-none d-md-inline-block">
                   <%= link_to 'My Books', user_books_path %>
                 </li>
-                <li>
+                <li class="nav-item d-none d-md-inline-block">
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
-                <li>
+                <li class="nav-item d-none d-md-inline-block">
                   <%= link_to "Login", new_user_session_path %>
                 </li>
-                <li>
+                <li class="nav-item d-none d-md-inline-block">
                   <%= link_to "Sign Up", new_user_registration_path %>
                 </li>
               <% end %>
