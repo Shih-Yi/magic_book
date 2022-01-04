@@ -20,6 +20,7 @@ require('datatables.net-responsive-bs4');
 require('datatables.net-bs4');
 // scss
 import "../../stylesheets/admin/admin_application"
+import "../../stylesheets/admin/sidebar"
 
 // custom js
 
