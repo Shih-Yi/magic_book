@@ -8,16 +8,16 @@
           </div>
           <div class="col-sm-3">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<%= root_path %>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<%= admin_root_path %>">Home</a></li>
               <li class="breadcrumb-item active">Book</li>
             </ol>
           </div>
-          <div class="col-sm-3">
+          <!-- <div class="col-sm-3">
             <%= link_to 'Create book', new_book_path, class: "btn btn-block btn-outline-success" %>
           </div>
-        </div>
+        </div> -->
 
-        <div class="container">
+        <%# <div class="container">
           <div class="row">
               <div class="col-sm-6">
                   <div class="form-group">
@@ -30,7 +30,7 @@
                   </div>
               </div>
           </div>
-        </div>
+        </div> %>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -47,7 +47,6 @@
               <table class="table table-bordered table-hover" id="the_datatable" width="100%">
                 <thead>
                   <tr>
-                    <th>Id</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Created at</th>
@@ -86,24 +85,27 @@
         "dataSrc": '',
         'data': function(reqParam) {
           // to see exactly what is being sent
-           console.log(reqParam);
+          //  console.log(reqParam);
            return reqParam;
        },
         'dataFilter': function(response){
             // this to see what exactly is being sent back
-            console.log(response);
+            // console.log(response);
             return response
         },
         "complete": function(xhr, responseText){
-          console.log(xhr.responseJSON);
-          console.log(responseText); //*** responseJSON: Array[0]
+          // console.log(xhr.responseJSON);
+          // console.log(responseText); //*** responseJSON: Array[0]
         }
       },
       "columns": [
-        { "data": "id" },
         { "data": "title"},
         { "data": "description"},
         { "data": "created_at"},
+        { "data": function (data, type, full, meta) {
+          return '<a href="/user/books/' + data.id + '/edit"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
+          '<span class="res-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
+          ; }},
       ],
       "columnDefs": [
         {

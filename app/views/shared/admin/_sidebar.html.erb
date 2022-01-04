@@ -7,11 +7,11 @@
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a> -->
 
-  <a href="" class="brand-link">
+  <a href="<%= admin_root_path %>" class="brand-link">
     <span class="brand-icon">
-      <i class="fas fa-utensils"></i>
+      <i class="fas fa-book"></i>
     </span>
-    <span class="brand-text font-weight-light">Zizibooks</span>
+    <span class="brand-text font-weight-light">Zizibooks Admin</span>
   </a>
 
   <!-- Sidebar -->
@@ -45,11 +45,11 @@
         <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link treeview-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+          <a href="<% admin_root_path %>" class="nav-link treeview-link active">
+            <i class="nav-icon fas fa-book-reader"></i>
             <p>
               Books
-              <i class="right fas fa-angle-left"></i>
+              <%# <i class="right fas fa-angle-left"></i> %>
             </p>
           </a>
           <!-- <ul class="nav nav-treeview" style="display: none;">

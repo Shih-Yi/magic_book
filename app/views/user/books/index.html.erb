@@ -85,17 +85,17 @@
         "dataSrc": '',
         'data': function(reqParam) {
           // to see exactly what is being sent
-           console.log(reqParam);
+          //  console.log(reqParam);
            return reqParam;
        },
         'dataFilter': function(response){
             // this to see what exactly is being sent back
-            console.log(response);
+            // console.log(response);
             return response
         },
         "complete": function(xhr, responseText){
-          console.log(xhr.responseJSON);
-          console.log(responseText); //*** responseJSON: Array[0]
+          // console.log(xhr.responseJSON);
+          // console.log(responseText); //*** responseJSON: Array[0]
         }
       },
       "columns": [
