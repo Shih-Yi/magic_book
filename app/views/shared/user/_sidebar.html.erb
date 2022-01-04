@@ -7,9 +7,9 @@
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a> -->
 
-  <a href="" class="brand-link">
+  <a href="<%= user_root_path %>" class="brand-link">
     <span class="brand-icon">
-      <i class="fas fa-utensils"></i>
+      <i class="fas fa-book"></i>
     </span>
     <span class="brand-text font-weight-light">Zizibooks</span>
   </a>
@@ -46,13 +46,13 @@
         with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link treeview-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fas fa-book-reader"></i>
             <p>
-              Menu
-              <i class="right fas fa-angle-left"></i>
+              Books
+              <%# <i class="right fas fa-angle-left"></i> %>
             </p>
           </a>
-          <ul class="nav nav-treeview" style="display: none;">
+          <!-- <ul class="nav nav-treeview" style="display: none;">
             <%# Dish::TYPE.each do |type| %>
               <li class="nav-item">
                 <a href="" class="nav-link">
@@ -61,7 +61,7 @@
                 </a>
               </li>
             <%# end %>
-          </ul>
+          </ul> -->
         </li>
 
         <!-- Nested Link -->
