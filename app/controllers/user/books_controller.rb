@@ -36,7 +36,7 @@ class User::BooksController < User::BaseController
     begin
       @book.update!(book_params)
     rescue ActiveRecord::RecordInvalid => e
-      flash[:error] = e.message + "上傳圖片超過5MB"
+      flash[:danger] = e.message + "上傳失敗，圖片超過5MB"
       redirect_to user_books_path and return
     end
     flash[:success] = "Successfully"
