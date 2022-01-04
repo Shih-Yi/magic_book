@@ -4,6 +4,11 @@
     <%= f.text_field :title %>
   </p>
 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
   <%= f.fields_for :attachments do |task| %>
     <%= render 'attachment_fields', :f => task %>
   <% end %>
