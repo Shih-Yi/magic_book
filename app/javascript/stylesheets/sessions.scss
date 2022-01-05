@@ -6,7 +6,7 @@ body.login{
   height: 100vh;
 }
 body.admin-login{
-  // background: url(../image/bg.jpg) no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../image/admin-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
