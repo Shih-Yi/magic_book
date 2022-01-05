@@ -9,6 +9,11 @@ class Admin::BooksController < Admin::BaseController
     end
   end
 
+  def destroy
+    @book.destroy
+    render status: 200, json: { result: '刪除成功' }
+  end
+
   def update_status
     case @book.publish_type
     when 'unpublished'

@@ -110,7 +110,7 @@
         { "data": "created_at"},
         { "data": function (data, type, full, meta) {
           return '<span class="status-event" data-id="' + data.id +'"><i class="far fa-edit fa-2x"></i></span>' + '  ' +
-          '<span class="res-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
+          '<span class="book-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
           ; }},
       ],
       "columnDefs": [
@@ -145,7 +145,7 @@
     // });
   });
 
-$(document).on('click', ".res-destroy",
+$(document).on('click', ".book-destroy",
   function(){
     Swal.fire({
       title: 'Are you sure?',
@@ -159,7 +159,7 @@ $(document).on('click', ".res-destroy",
       if (result.isConfirmed) {
         let id = $(this).data("id")
         $.ajax({
-          url: "/reservations/" + id,
+          url: "/admin/books/" + id,
           method: 'delete',
         })
         .done(function (ret) {
