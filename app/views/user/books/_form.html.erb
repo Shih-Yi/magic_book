@@ -14,11 +14,11 @@
   <%= f.fields_for :attachments do |task| %>
     <%= render 'attachment_fields', :f => task %>
   <% end %>
-  <p class="text-left">
-    <%= link_to_add_association "新增繪本檔案", f, :attachments %>
-  </p>
+  <div class="text-left my-5">
+    <%= link_to_add_association "新增繪本檔案", f, :attachments, class: 'btn btn-outline-info' %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="text-left mb-2">
+    <%= f.submit class: 'btn btn-outline-success' %>
+  </div>
 <% end %>
