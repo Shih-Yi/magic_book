@@ -21,5 +21,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'home#index'
+    resources :books do
+      member do
+        post :update_status
+      end
+    end
   end
 end

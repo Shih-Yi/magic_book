@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-3">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<%= admin_root_path %>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<%= admin_books_path %>">Home</a></li>
               <li class="breadcrumb-item active">Book</li>
             </ol>
           </div>
@@ -49,6 +49,7 @@
                   <tr>
                     <th>Title</th>
                     <th>Description</th>
+                    <th>Publish</th>
                     <th>Created at</th>
                     <th>Settings</th>
                   </tr>
@@ -74,7 +75,7 @@
     let table = $("#the_datatable").DataTable({
       responsive: true,
       "ajax":  {
-        "url": "/admin",
+        "url": "/admin/books",
         "type": "GET",
         // "data": {
         //   "date": function () {
@@ -101,9 +102,14 @@
       "columns": [
         { "data": "title"},
         { "data": "description"},
+        { "data": function (data, type, full, meta) {
+          let publish_type = data.publish_type == 'published' ? '發佈' : '未發佈'
+          let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
+          return '<span class="publish-type-' + data.id + ' ' + publish_class + '">' + publish_type + '</span>'
+          ; }},
         { "data": "created_at"},
         { "data": function (data, type, full, meta) {
-          return '<a href="/user/books/' + data.id + '/edit"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
+          return '<span class="status-event" data-id="' + data.id +'"><i class="far fa-edit fa-2x"></i></span>' + '  ' +
           '<span class="res-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
           ; }},
       ],
@@ -166,6 +172,38 @@ $(document).on('click', ".res-destroy",
             body: ret.result,
           })
         })
+      }
+    })
+  }
+)
+
+
+$(document).on('click', ".status-event",
+  function(){
+    let self = $(this)
+    let id = $(this).data("id")
+    console.log(id)
+    $.ajax({
+      url: "/admin/books/" + id + "/update_status",
+      type: 'POST',
+      data: JSON.stringify({ id: id }),
+      contentType: 'application/json',
+    })
+    .done(function (ret) {
+      console.log(ret)
+      const status = ret.status;
+      const id = ret.id;
+      switch (status) {
+        case 'published':
+          $('.publish-type-' + id).removeClass("bg-gradient-danger");
+          $('.publish-type-' + id).addClass("bg-gradient-info");
+          $('.publish-type-' + id).text('發佈');
+          break;
+        case 'unpublished':
+          $('.publish-type-' + id).removeClass("bg-gradient-info");
+          $('.publish-type-' + id).addClass("bg-gradient-danger");
+          $('.publish-type-' + id).text('未發佈');
+          break;
       }
     })
   }
