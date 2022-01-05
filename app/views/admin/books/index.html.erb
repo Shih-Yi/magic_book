@@ -100,7 +100,9 @@
         }
       },
       "columns": [
-        { "data": "title"},
+        { "data": function (data, type, full, meta) {
+          return '<a href="/admin/books/' + data.id + '"' + '>' + data.title +'</a>'
+          ; }},
         { "data": "description"},
         { "data": function (data, type, full, meta) {
           let publish_type = data.publish_type == 'published' ? '發佈' : '未發佈'

@@ -7,6 +7,11 @@
 @import 'datatables.net-bs4';
 @import 'sweetalert2/src/sweetalert2.scss';
 
+// custom
+@import '../../stylesheets/admin/sidebar';
+@import '../../stylesheets/admin/slider';
+@import '../../stylesheets/admin/book';
+
 body {
   font-family: sans-serif;
   background-color: #eeeeee;
@@ -122,4 +127,32 @@ body {
 .remove-image:active {
   border: 0;
   transition: all .2s ease;
+}
+
+/*------------------------------------------------------------------
+Main / #main
+-------------------------------------------------------------------*/
+
+#mt-main {
+	overflow: hidden;
+}
+
+/*------------------------------------------------------------------
+Wrapper / #wrapper
+-------------------------------------------------------------------*/
+
+#wrapper {
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+	outline: none;
 }

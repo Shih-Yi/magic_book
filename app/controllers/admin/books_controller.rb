@@ -9,6 +9,9 @@ class Admin::BooksController < Admin::BaseController
     end
   end
 
+  def show
+  end
+
   def destroy
     @book.destroy
     render status: 200, json: { result: '刪除成功' }

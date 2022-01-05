@@ -23,9 +23,9 @@ window.Swal = Swal
 
 // scss
 import "../../stylesheets/admin/admin_application"
-import "../../stylesheets/admin/sidebar"
 
 // custom js
+import "./main"
 
 Rails.start()
 // Turbolinks.start()
