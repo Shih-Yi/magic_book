@@ -14,6 +14,7 @@ import $ from 'jquery'
 window.jQuery = $;
 window.$ = $;
 require("@nathanvda/cocoon")
+require('admin-lte');
 
 // scss
 import "../stylesheets/application"
