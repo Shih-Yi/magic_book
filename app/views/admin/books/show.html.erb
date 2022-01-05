@@ -47,6 +47,16 @@
 									</ul> %>
 									<!-- Breadcrumbs of the Page end -->
 									<h2><%= @book.title %></h2>
+									<div class="text-section">
+										<% publish_type = @book.publish_type == 'published' ? '發佈' : '未發佈' %>
+										<% publish_action = @book.publish_type == 'published' ? '取消發佈' : '發佈' %>
+									    <% publish_class = @book.publish_type == 'published' ? 'text-info' : 'text-danger'%>
+										<% publish_action_class = @book.publish_type == 'published' ? 'btn-outline-danger' : 'btn-outline-info'%>
+										<div class="pub-text <%= publish_class %>">(<%= publish_type %>)</div>
+									</div>
+									<div class="text-section">
+										<button type="button" class="btn btn-pub <%= publish_action_class %> status-event" data-id="<%= @book.id %>"><%= publish_action %>繪本</button>
+									</div>
 									<!-- Rank Rating of the Page -->
 									<%# <div class="rank-rating">
 										<span class="total-price">Reviews (12)</span>
@@ -174,3 +184,44 @@
 		<%# <span id="back-top" class="fa fa-arrow-up"></span> %>
 	</div>
 </div>
+
+<script>
+
+$(document).on('click', ".status-event",
+  function(){
+    let self = $(this)
+    let id = $(this).data("id")
+    console.log(id)
+    $.ajax({
+      url: "/admin/books/" + id + "/update_status",
+      type: 'POST',
+      data: JSON.stringify({ id: id }),
+      contentType: 'application/json',
+    })
+    .done(function (ret) {
+      console.log(ret)
+      const status = ret.status;
+      const id = ret.id;
+      switch (status) {
+        case 'published':
+          $('.pub-text').removeClass("text-danger");
+          $('.pub-text').addClass("text-info");
+          $('.pub-text').text('(發佈)');
+		  $('.btn-pub').removeClass("btn-outline-info");
+		  $('.btn-pub').addClass("btn-outline-danger");
+		  $('.btn-pub').text('取消發佈繪本');
+          break;
+        case 'unpublished':
+          $('.pub-text').removeClass("text-info");
+          $('.pub-text').addClass("text-danger");
+          $('.pub-text').text('(未發佈)');
+		  $('.btn-pub').removeClass("btn-outline-danger");
+		  $('.btn-pub').addClass("btn-outline-info");
+		  $('.btn-pub').text('發佈繪本');
+          break;
+      }
+    })
+  }
+)
+
+</script>
