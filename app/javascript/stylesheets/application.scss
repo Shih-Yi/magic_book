@@ -103,6 +103,10 @@ a:hover {
 	text-decoration: none;
 }
 
+.f-promo-box .border {
+	border: none !important;
+}
+
 /*------------------------------------------------------------------
 3. Mt Header / #mt-header
 -------------------------------------------------------------------*/
@@ -4837,7 +4841,7 @@ a:hover {
 }
 
 .banner-box.fourth {
-	width: 814px;
+	width: 100%;
 }
 
 .banner-box.fifth {
@@ -8356,7 +8360,7 @@ a:hover {
 
 #product-masonry {
 	overflow: hidden;
-	margin: 80px 0 60px;
+	margin: 50px 0 60px;
 }
 
 #product-masonry #product-filter {
@@ -8409,7 +8413,7 @@ a:hover {
 
 #product-masonry .masonry-list {
 	padding: 0;
-	margin: 0 0 -1px;
+	margin: 50px 0 -1px;
 	overflow: hidden;
 	list-style: none;
 	position: relative;
