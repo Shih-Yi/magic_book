@@ -24,6 +24,9 @@
       <ul class="nav navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item d-none d-md-block">
+            <%= link_to '首頁', root_path, class: "nav-link nav-link-item" %>
+          </li>
+          <li class="nav-item d-none d-md-block">
             <em class="nav-link">Hi, <%= current_user.email %></em>
           </li>
           <li class="nav-item d-none d-md-block">

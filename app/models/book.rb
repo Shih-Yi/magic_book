@@ -18,6 +18,6 @@ class Book < ApplicationRecord
 
   # public instance methods ...................................................
   def cover_image
-    attachments.first.image.url
+    attachments.try(:first).try(:image).try(:url)
   end
 end

@@ -29,7 +29,7 @@
           <nav id="nav">
             <ul>
               <li>
-                <a class="nav-item d-none d-md-inline-block" href="/">HOME <i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+                <a class="nav-item d-none d-md-inline-block" href="/">首頁<i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
                 <%# <div class="s-drop">
                   <ul>
                     <li><a href="homepage1.html">Homepage1</a></li>
@@ -274,17 +274,17 @@
                   <%= link_to current_user.email, root_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to 'My Books', user_books_path %>
+                  <%= link_to '我的繪本', user_books_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "登出", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "Login", new_user_session_path %>
+                  <%= link_to "登入", new_user_session_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "Sign Up", new_user_registration_path %>
+                  <%= link_to "註冊", new_user_registration_path %>
                 </li>
               <% end %>
               <!-- mobile view -->
@@ -293,14 +293,14 @@
                   <%= link_to current_user.email, root_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item d-md-none">
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                  <%= link_to "登出", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
               <% else %>
                 <li class="nav-item d-md-none">
-                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                  <%= link_to "登入", new_user_session_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item d-md-none">
-                  <%= link_to "Sign Up", root_path, class: "nav-link" %>
+                  <%= link_to "註冊", root_path, class: "nav-link" %>
                 </li>
               <% end %>
               <!-- Login Links end -->
