@@ -15,8 +15,6 @@
           <br/>
           <hr/>
 
-          
-
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">繪本檔案</h3>
@@ -59,10 +57,11 @@
   }
 </style>
 
-<%# <script>
-  // cocoon add element callbacks
-  // $(document).on("cocoon:before-insert", 
-  //   function() {
-  //   }
-  // )
-</script> %>
+<script>
+  // cocoon remove element callbacks
+  $(document).on("cocoon:before-remove", 
+    function(e, removedItem, originalEvent) {
+      removedItem.parent().hide();
+    }
+  )
+</script>
