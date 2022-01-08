@@ -1,24 +1,68 @@
-<%= form_for [:user, @book] do |f|%>
-  <p>
-    <%= f.label :標題 %><br>
-    <%= f.text_field :title, class: 'form-text' %>
-  </p>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <%= form_for [:user, @book] do |f|%>
+          <p>
+            <%= f.label :標題 %><br>
+            <%= f.text_field :title, class: 'form-text' %>
+          </p>
 
-  <p>
-    <%= f.label :描述 %><br>
-    <%= f.text_area :description, class: 'form_field form-area' %>
-  </p>
-  <br/>
-  <hr/>
+          <p>
+            <%= f.label :描述 %><br>
+            <%= f.text_area :description, class: 'form_field form-area' %>
+          </p>
+          <br/>
+          <hr/>
 
-  <%= f.fields_for :attachments do |task| %>
-    <%= render 'attachment_fields', :f => task %>
-  <% end %>
-  <div class="text-left my-5">
-    <%= link_to_add_association "新增繪本檔案", f, :attachments, class: 'btn btn-outline-info' %>
-  </div>
+          
 
-  <div class="text-left mb-2">
-    <%= f.submit class: 'btn btn-outline-success' %>
-  </div>
-<% end %>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">繪本檔案</h3>
+            </div>
+            <div class="card-body">
+              <div class="row card-form">
+                <%= f.fields_for :attachments do |task| %>
+                  <%= render 'attachment_fields', :f => task %>
+                <% end %>
+                <div class="text-left my-5 col-12">
+                  <%= link_to_add_association "新增繪本檔案", f, :attachments, class: 'btn btn-outline-info', id: "create_zizibooks" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-left mb-2">
+            <%= f.submit class: 'btn btn-outline-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+
+<style>
+  .card-form {
+    counter-reset: page-counter page-des-counter;
+  }
+
+  .page-counter:before {
+      content: counter(page-counter);
+      counter-increment: page-counter;
+  }
+
+  .page-des-counter:before {
+      content: counter(page-des-counter);
+      counter-increment: page-des-counter;
+  }
+</style>
+
+<%# <script>
+  // cocoon add element callbacks
+  // $(document).on("cocoon:before-insert", 
+  //   function() {
+  //   }
+  // )
+</script> %>

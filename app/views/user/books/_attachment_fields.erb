@@ -1,9 +1,9 @@
-<div class='nested-fields'>
-  <h4>繪本檔案</h4>
-  <!-- image -->
-  <div class="form-group">
-    <%= f.label :圖片 %>
-    <label class="uploader">
+<div class="col-4">
+  <div class='nested-fields'>
+    <h6>繪本第<span class="page-counter"><span>頁</h6>
+    <!-- image -->
+    <div class="form-group">
+      <label class="uploader">
         <span class="icon"><i class="fas fa-upload fa-2x"></i></span>
         <span class="placeholder">
           <% if f.object.image.present? %>
@@ -13,17 +13,17 @@
           <% end %>
         </span>
         <%= f.file_field :image, :class => "form-control" %>
-    </label>
+      </label>
+    </div>
+    <!-- description -->
+    <div class="form-group">
+      <h6>第<span class="page-des-counter"><span>頁簡介</h6>
+      <%= f.text_area :description, class: 'form_field form-area' %>
+    </div>
+    <%= link_to_remove_association "刪除此繪本檔案", f %>
+    <br/>
+    <hr/>
   </div>
-  <!-- description -->
-  <div class="form-group">
-    <%= f.label :描述 %>
-    <%= f.text_area :description, class: 'form_field form-area' %>
-  </div>
-  <%= link_to_remove_association "刪除此繪本檔案", f %>
-  <br/>
-  <br/>
-  <hr/>
 </div>
 
 <script>
