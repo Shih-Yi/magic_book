@@ -4,7 +4,7 @@ class BookImageAttachment < ApplicationRecord
   belongs_to :book
 
   # before_action .............................................................
-  before_save :check_image_size
+  # before_save :check_image_size
   before_save :update_image_attributes
   # public instance methods ...................................................
   

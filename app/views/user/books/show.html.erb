@@ -32,7 +32,7 @@
 									<!-- Pagg Slider of the Page -->
 									<ul class="list-unstyled slick-slider pagg-slider">
 										<% @book.attachments.each do |attachment| %>
-											<li><div class="img"><img src="<%= attachment.image.url %>" alt="image description"></div></li>
+											<audio controls><source src="/<%= attachment.image_identifier %>"  type="audio/mpeg"></audio>
 										<% end %>
 									</ul>
 									<!-- Pagg Slider of the Page end -->
