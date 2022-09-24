@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-3">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<%= admin_books_path %>">列表首頁</a></li>
+              <li class="breadcrumb-item"><a href="<%= admin_book_audios_path %>">列表首頁</a></li>
               <li class="breadcrumb-item active">音檔</li>
             </ol>
           </div>
@@ -86,12 +86,17 @@
       },
       "columns": [
         // { "data": function (data, type, full, meta) {
-        //   return '<a href="/admin/book_audios/' + data.id + '"' + '>' + data.file +'</a>'
+        //   return '<audio controls><source src="/' + data.file.url.split("/")[2] + '" type="audio/mpeg"></audio>'
         //   ; }},
         { "data": "book_title"},
         { "data": function (data, type, full, meta) {
-          let file_name = data.file.url.split("/")[2]
+          console.log(data.file.url != null)
+          let file_name = ''
+          if(data.file.url != null){
+            file_name = data.file.url.split("/")[2]
+          }
           console.log(data)
+          console.log(file_name)
         //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
           return '<span class="publish-type-' + data.id + ' ' + '">' + file_name + '</span>'
           ; }},
@@ -103,7 +108,7 @@
         //   ; }},
         { "data": "created_at"},
         { "data": function (data, type, full, meta) {
-          return '<span class="status-event" data-id="' + data.id +'"><i class="far fa-edit fa-2x"></i></span>' + '  ' +
+          return '<a href="/admin/book_audios/' + data.id +'/edit"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
           '<span class="book-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
           ; }},
       ],
@@ -153,7 +158,7 @@ $(document).on('click', ".book-destroy",
       if (result.isConfirmed) {
         let id = $(this).data("id")
         $.ajax({
-          url: "/admin/books/" + id,
+          url: "/admin/book_audios/" + id,
           method: 'delete',
         })
         .done(function (ret) {
@@ -166,38 +171,6 @@ $(document).on('click', ".book-destroy",
             body: ret.result,
           })
         })
-      }
-    })
-  }
-)
-
-
-$(document).on('click', ".status-event",
-  function(){
-    let self = $(this)
-    let id = $(this).data("id")
-    console.log(id)
-    $.ajax({
-      url: "/admin/book_audios/" + id + "/update_status",
-      type: 'POST',
-      data: JSON.stringify({ id: id }),
-      contentType: 'application/json',
-    })
-    .done(function (ret) {
-      console.log(ret)
-      const status = ret.status;
-      const id = ret.id;
-      switch (status) {
-        case 'published':
-          $('.publish-type-' + id).removeClass("bg-gradient-danger");
-          $('.publish-type-' + id).addClass("bg-gradient-info");
-          $('.publish-type-' + id).text('發佈');
-          break;
-        case 'unpublished':
-          $('.publish-type-' + id).removeClass("bg-gradient-info");
-          $('.publish-type-' + id).addClass("bg-gradient-danger");
-          $('.publish-type-' + id).text('未發佈');
-          break;
       }
     })
   }

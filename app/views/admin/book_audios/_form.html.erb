@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <%= form_for [:admin, @audios] do |f|%>
+        <%= form_for [:admin, @audio] do |f|%>
           <p>
             <%= f.label :標題 %><br>
             <%= f.text_field :book_title, class: 'form-text' %>
@@ -11,6 +11,12 @@
             <%= f.label :檔案 %><br>
             <%= f.file_field :file, class: 'form-text' %>
           </p>
+          <% if f.object.file.present? %>
+            <label>
+              <%= f.check_box :remove_file %> 刪除圖檔
+            </label>
+            <%= link_to f.object.file.identifier, f.object.file.url, :target => "_blank" %>
+          <% end %>
 
           <br/>
           <hr/>
