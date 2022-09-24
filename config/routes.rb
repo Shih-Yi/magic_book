@@ -26,5 +26,6 @@ Rails.application.routes.draw do
         post :update_status
       end
     end
+    resources :book_audios
   end
 end

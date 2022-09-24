@@ -1,0 +1,199 @@
+<div class="content-wrapper px-2 py-2">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>音檔</h1>
+          </div>
+          <div class="col-sm-3">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<%= admin_books_path %>">列表首頁</a></li>
+              <li class="breadcrumb-item active">音檔</li>
+            </ol>
+          </div>
+          <!-- <div class="col-sm-3">
+            <%= link_to 'Create book', new_book_path, class: "btn btn-block btn-outline-success" %>
+          </div>
+        </div> -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">全部音檔管理</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered table-hover" id="the_datatable" width="100%">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Publish</th>
+                    <th>Created at</th>
+                    <th>Settings</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+<script>
+  $(document).ready(function(){
+    let table = $("#the_datatable").DataTable({
+      responsive: true,
+      "ajax":  {
+        "url": "/admin/book_audios",
+        "type": "GET",
+        // "data": {
+        //   "date": function () {
+        //       return $(".datetimepicker-input").val()
+        //     }
+        // },
+        "contentType": 'application/json',
+        "dataSrc": '',
+        'data': function(reqParam) {
+          // to see exactly what is being sent
+          //  console.log(reqParam);
+           return reqParam;
+       },
+        'dataFilter': function(response){
+            // this to see what exactly is being sent back
+            // console.log(response);
+            return response
+        },
+        "complete": function(xhr, responseText){
+          // console.log(xhr.responseJSON);
+          // console.log(responseText); //*** responseJSON: Array[0]
+        }
+      },
+      "columns": [
+        { "data": function (data, type, full, meta) {
+          return '<a href="/admin/book_audios/' + data.id + '"' + '>' + data.file +'</a>'
+          ; }},
+        { "data": "description"},
+        // { "data": function (data, type, full, meta) {
+        // //   let publish_type = data.publish_type == 'published' ? '發佈' : '未發佈'
+        // //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
+        //   return '<span class="publish-type-' + data.id + ' ' + publish_class + '">' + publish_type + '</span>'
+        //   ; }},
+        { "data": "created_at"},
+        { "data": function (data, type, full, meta) {
+          return '<span class="status-event" data-id="' + data.id +'"><i class="far fa-edit fa-2x"></i></span>' + '  ' +
+          '<span class="book-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
+          ; }},
+      ],
+      "columnDefs": [
+        {
+          targets: [1],
+          className: 'text-center'
+        }
+      ],
+      // "columnDefs": [{
+      //   targets:4,
+      //   render: function(data){
+      //   return moment(data).format('DD/MM/YYYY HH:mm');
+      //   }}
+      // ],
+    });
+
+    // datetimepicker
+    // $(function () {
+    //   let today = moment(new Date(), "DD/MM/YYYY");
+    //   console.log(today)
+    //   $('#datetimepicker').datetimepicker({
+    //     format: 'DD/MM/YYYY',
+    //     defaultDate: today,
+    //   });
+    // });
+
+    // $('#datetimepicker').on("change.datetimepicker", function(e) {
+    //   let newDate = e.date;
+    //   let oldDate = e.oldDate;
+    //   let date = moment(Date.parse(newDate)).format("DD/MM/YYYY")
+    //   table.search(date).draw();
+    // });
+  });
+
+$(document).on('click', ".book-destroy",
+  function(){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let id = $(this).data("id")
+        $.ajax({
+          url: "/admin/books/" + id,
+          method: 'delete',
+        })
+        .done(function (ret) {
+          $('#the_datatable').DataTable().ajax.reload();
+          $(document).Toasts('create', {
+            delay: 5000,
+            autohide: true,
+            class: 'bg-danger',
+            title: 'Delete',
+            body: ret.result,
+          })
+        })
+      }
+    })
+  }
+)
+
+
+$(document).on('click', ".status-event",
+  function(){
+    let self = $(this)
+    let id = $(this).data("id")
+    console.log(id)
+    $.ajax({
+      url: "/admin/book_audios/" + id + "/update_status",
+      type: 'POST',
+      data: JSON.stringify({ id: id }),
+      contentType: 'application/json',
+    })
+    .done(function (ret) {
+      console.log(ret)
+      const status = ret.status;
+      const id = ret.id;
+      switch (status) {
+        case 'published':
+          $('.publish-type-' + id).removeClass("bg-gradient-danger");
+          $('.publish-type-' + id).addClass("bg-gradient-info");
+          $('.publish-type-' + id).text('發佈');
+          break;
+        case 'unpublished':
+          $('.publish-type-' + id).removeClass("bg-gradient-info");
+          $('.publish-type-' + id).addClass("bg-gradient-danger");
+          $('.publish-type-' + id).text('未發佈');
+          break;
+      }
+    })
+  }
+)
+
+</script>

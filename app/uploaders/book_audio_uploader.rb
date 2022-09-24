@@ -1,4 +1,4 @@
-class BookImageAttachmentUploader < CarrierWave::Uploader::Base
+class BookAudioUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -9,10 +9,7 @@ class BookImageAttachmentUploader < CarrierWave::Uploader::Base
   else
     storage :file
   end
-
-  # version :small do
-  #   process resize_to_fit: [250, 250]
-  # end
+  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -43,7 +40,7 @@ class BookImageAttachmentUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w(mp3)
   end
 
   # Override the filename of the uploaded files:
