@@ -1,12 +1,23 @@
+<!-- mt mainslider3 start here -->
+<div class="mt-mainslider3">
+  <!-- slider banner-slider start here -->
+  <div class="slider banner-slider">
+    <!-- holder start here -->
+    <div class="holder">
+      <img class="img" src="/cover-new.jpg" alt="image description" >
+    </div><!-- holder end here -->
+    <!-- holder start here -->
+  </div>
+</div><!-- mt mainslider3 end here -->
 <div class="container ">
-  <div class="row">
+  <div class="row login-row">
     <div class="login-container col-xl-4 col-lg-5 col-md-6 col-sm-8 col-12">
       <div class="login-title text-center">
-        <h2><span><%= link_to 'Zizibooks', root_path %></span></h2>
+        <!--  <h2><span><%#= link_to 'Zizibooks', root_path%></span></h2> -->
       </div>
       <div class="login-content">
         <div class="login-header ">
-          <h4><strong>Login</strong></h4>
+          <h4><strong>管理員登入</strong></h4>
         </div>
         <div class="login-body">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
