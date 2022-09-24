@@ -109,6 +109,7 @@
         { "data": "created_at"},
         { "data": function (data, type, full, meta) {
           return '<a href="/admin/book_audios/' + data.id +'/edit"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
+          '<a href="/admin/book_audios/' + data.id +'/download_audio"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
           '<span class="book-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
           ; }},
       ],
