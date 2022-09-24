@@ -1,0 +1,26 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <%= form_for [:admin, @audios] do |f|%>
+          <p>
+            <%= f.label :標題 %><br>
+            <%= f.text_field :book_title, class: 'form-text' %>
+          </p>
+          <p>
+            <%= f.label :檔案 %><br>
+            <%= f.file_field :file, class: 'form-text' %>
+          </p>
+
+          <br/>
+          <hr/>
+
+          <div class="text-left mb-2">
+            <%= f.submit class: 'btn btn-outline-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>

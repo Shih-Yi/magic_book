@@ -12,10 +12,10 @@
               <li class="breadcrumb-item active">音檔</li>
             </ol>
           </div>
-          <!-- <div class="col-sm-3">
-            <%= link_to 'Create book', new_book_path, class: "btn btn-block btn-outline-success" %>
+          <div class="col-sm-3">
+            <%= link_to '音檔上傳', new_admin_book_audio_path, class: "btn btn-block btn-outline-success" %>
           </div>
-        </div> -->
+        </div>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -32,11 +32,11 @@
               <table class="table table-bordered table-hover" id="the_datatable" width="100%">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Publish</th>
-                    <th>Created at</th>
-                    <th>Settings</th>
+                    <th>繪本書名</th>
+                    <th>音檔</th>
+                    <th>上傳者</th>
+                    <th>上傳日期</th>
+                    <th>設定</th>
                   </tr>
                 </thead>
               </table>
@@ -85,10 +85,17 @@
         }
       },
       "columns": [
+        // { "data": function (data, type, full, meta) {
+        //   return '<a href="/admin/book_audios/' + data.id + '"' + '>' + data.file +'</a>'
+        //   ; }},
+        { "data": "book_title"},
         { "data": function (data, type, full, meta) {
-          return '<a href="/admin/book_audios/' + data.id + '"' + '>' + data.file +'</a>'
+          let file_name = data.file.url.split("/")[2]
+          console.log(data)
+        //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
+          return '<span class="publish-type-' + data.id + ' ' + '">' + file_name + '</span>'
           ; }},
-        { "data": "description"},
+        { "data": "uploader_name"},
         // { "data": function (data, type, full, meta) {
         // //   let publish_type = data.publish_type == 'published' ? '發佈' : '未發佈'
         // //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'

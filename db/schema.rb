@@ -33,9 +33,11 @@ ActiveRecord::Schema.define(version: 2022_09_24_093849) do
   end
 
   create_table "book_audios", force: :cascade do |t|
+    t.string "book_title"
     t.string "file"
     t.string "audio_type"
     t.string "audio_size"
+    t.string "uploader_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

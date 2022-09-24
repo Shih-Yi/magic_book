@@ -1,5 +1,5 @@
 class BookAudio < ApplicationRecord
-  mount_uploader :audio, BookAudioUploader
+  mount_uploader :file, BookAudioUploader
   # relationships .............................................................
 
   # before_action .............................................................
@@ -11,15 +11,15 @@ class BookAudio < ApplicationRecord
   private
 
   def check_audio_size
-    if self.present? && self.audio.file.size > 30_720_000
+    if self.present? && self.file.size > 30_720_000
       raise ActiveRecord::RecordInvalid.new(self)
     end
   end
 
   def update_audio_attributes
-    if audio.present? && audio_changed?
-      self.audio_type = audio.file.content_type
-      self.audio_size = audio.file.size
+    if file.present? && file_changed?
+      self.audio_type = file.content_type
+      self.audio_size = file.size
     end
   end
 end
