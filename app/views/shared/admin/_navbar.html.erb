@@ -1,96 +1,317 @@
-<nav class="main-header navbar navbar-expand navbar-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-    </li>
-    <!-- <li class="nav-item dropdown">
-      <a class="nav-link bg-info rounded dropdown-toggle" href="#" id="navbarVersionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v3.1.0
-      </a>
-      <div class="dropdown-menu py-0" aria-labelledby="navbarVersionDropdown">
-        <a class="dropdown-item bg-info disabled" href="#">v3.1</a>
-        <a class="dropdown-item" href="https://adminlte.io/docs/3.0/">v3.0</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="https://adminlte.io/docs/2.4/installation">v2.4</a>
-        <a class="dropdown-item" href="https://adminlte.io/themes/AdminLTE/documentation/index.html">&lt;= v2.3</a>
+<!-- mt header style4 start here -->
+<header id="mt-header" class="style4">
+  <!-- mt bottom bar start here -->
+  <div class="mt-bottom-bar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <!-- mt logo start here -->
+          <%# <div class="mt-logo"><a href="#"><img src="images/mt-logo.png" alt="schon"></a></div> %>
+          <!-- mt icon list start here -->
+          <ul class="mt-icon-list">
+            <%= image_pack_tag "media/images/admin.png" %>
+            <!-- <li class="hidden-lg hidden-md">
+              <a href="#" class="bar-opener mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar small"></span>
+                <span class="bar"></span>
+              </a>
+            </li>
+            <li><a href="#" class="icon-magnifier"></a></li> -->
+            <%# <li>
+              <a href="#" class="bar-opener side-opener">
+                <span class="bar"></span>
+                <span class="bar small"></span>
+                <span class="bar"></span>
+              </a>
+            </li> %>
+          </ul><!-- mt icon list end here -->
+          <!-- navigation start here -->
+          <nav id="nav">
+            <ul>
+              <li>
+                <%# <a class="nav-item d-none d-md-inline-block" href="/">首頁<i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a> %>
+                <%# <div class="s-drop">
+                  <ul>
+                    <li><a href="homepage1.html">Homepage1</a></li>
+                    <li><a href="homepage2.html">homepage2</a></li>
+                    <li><a href="homepage3.html">homepage3</a></li>
+                    <li><a href="homepage4.html">homepage4</a></li>
+                    <li><a href="homepage5.html">Homepage5</a></li>
+                    <li><a href="homepage6.html">homepage6</a></li>
+                    <li><a href="homepage7.html">homepage7</a></li>
+                    <li><a href="homepage8.html">homepage8</a></li>
+                    <li><a href="homepage9.html">homepage9</a></li>
+                  </ul>
+                </div> %>
+              </li>
+              <%# <li class="drop">
+                <a href="product-grid-view.html">PRODUCTS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <!-- mt dropmenu start here -->
+                <div class="mt-dropmenu text-left">
+                  <!-- mt frame start here -->
+                  <div class="mt-frame">
+                    <!-- mt f box start here -->
+                    <div class="mt-f-box">
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="product-grid-view.html" class="mt-subopener">PRODUCTS</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="product-grid-view.html">Product Grid View</a></li>
+                              <li><a href="product-list-view.html">Product List View</a></li>
+                              <li><a href="product-detail.html">Product Detail</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">404 Pages</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="404-page.html">404 Page</a></li>
+                              <li><a href="404-page2.html">404 Page2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">About US</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="about-us.html">About</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">Contact US</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="contact-us.html">Contact</a></li>
+                              <li><a href="contact-us2.html">Contact 2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">Coming Soon</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="coming-soon.html">Coming Soon</a></li>
+                              <li><a href="coming-soon2.html">Coming Soon2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">KITCHEN FURNITURE</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="#">Kitchen Taps</a></li>
+                              <li><a href="#">Breakfast time</a></li>
+                              <li><a href="#">Cooking</a></li>
+                              <li><a href="#">Food Storage Boxes</a></li>
+                              <li><a href="#">Spice Jars</a></li>
+                              <li><a href="#">Napskins</a></li>
+                              <li><a href="#">Oven Gloves</a></li>
+                              <li><a href="#">Placemats</a></li>
+                              <li><a href="#">Cooking</a></li>
+                              <li><a href="#">Food Storage Boxes</a></li>
+                              <li><a href="#">Spice Jars</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3 promo">
+                        <div class="mt-promobox">
+                          <a href="#"><img src="http://placehold.it/295x320" alt="promo banner" class="img-responsive"></a>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+                    </div>
+                    <!-- mt f box end here -->
+                  </div>
+                  <!-- mt frame end here -->
+                </div>
+                <!-- mt dropmenu end here -->
+                <span class="mt-mdropover"></span>
+              </li> %>
+              <%# <li>
+                <a class="drop-link" href="blog-right-sidebar.html">Blog <i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+                <div class="s-drop">
+                  <ul>
+                    <li><a href="blog-fullwidth-page.html">Blog Fullwidth Page</a></li>
+                    <li><a href="blog-right-sidebar2.html">blog right sidebar2</a></li>
+                    <li><a href="blog-postlist-3-masonry.html">blog postlist masonry</a></li>
+                    <li><a href="blog-post-detail-sidebar.html">blog post detail sidebar</a></li>
+                    <li><a href="blog-post-detail-full-width.html">blog post detail full width</a></li>
+                  </ul>
+                </div>
+              </li> %>
+              <%# <li class="drop">
+                <a href="#">PAGES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <!-- mt dropmenu start here -->
+                <div class="mt-dropmenu text-left">
+                  <!-- mt frame start here -->
+                  <div class="mt-frame">
+                    <!-- mt f box start here -->
+                    <div class="mt-f-box">
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="product-grid-view.html" class="mt-subopener">PRODUCTS</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="product-grid-view.html">Product Grid View</a></li>
+                              <li><a href="product-list-view.html">Product List View</a></li>
+                              <li><a href="product-detail.html">Product Detail</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">404 Pages</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="404-page.html">404 Page</a></li>
+                              <li><a href="404-page2.html">404 Page2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">About US</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="about-us.html">About</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">Contact US</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="contact-us.html">Contact</a></li>
+                              <li><a href="contact-us2.html">Contact 2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">Coming Soon</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="coming-soon.html">Coming Soon</a></li>
+                              <li><a href="coming-soon2.html">Coming Soon2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3">
+                        <div class="sub-dropcont">
+                          <strong class="title"><a href="#" class="mt-subopener">KITCHEN FURNITURE</a></strong>
+                          <div class="sub-drop">
+                            <ul>
+                              <li><a href="#">Kitchen Taps</a></li>
+                              <li><a href="#">Breakfast time</a></li>
+                              <li><a href="#">Cooking</a></li>
+                              <li><a href="#">Food Storage Boxes</a></li>
+                              <li><a href="#">Spice Jars</a></li>
+                              <li><a href="#">Napskins</a></li>
+                              <li><a href="#">Oven Gloves</a></li>
+                              <li><a href="#">Placemats</a></li>
+                              <li><a href="#">Cooking</a></li>
+                              <li><a href="#">Food Storage Boxes</a></li>
+                              <li><a href="#">Spice Jars</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+
+                      <!-- mt col3 start here -->
+                      <div class="mt-col-3 promo">
+                        <div class="mt-promobox">
+                          <a href="#"><img src="http://placehold.it/295x320" alt="promo banner" class="img-responsive"></a>
+                        </div>
+                      </div>
+                      <!-- mt col3 end here -->
+                    </div>
+                    <!-- mt f box end here -->
+                  </div>
+                  <!-- mt frame end here -->
+                </div>
+                <!-- mt dropmenu end here -->
+                <span class="mt-mdropover"></span>
+              </li> %>
+              <%# <li><a href="about-us.html">About</a></li> %>
+              <li>
+                <%# <a class="" href="#mt-footer">Contact</a> %>
+                <%# <div class="s-drop">
+                  <ul>
+                    <li><a href="contact-us.html">Contact</a></li>
+                    <li><a href="contact-us2.html">Contact 2</a></li>
+                  </ul>
+                </div> %>
+              </li>
+              <!-- Login Links -->
+              <!--  <% if user_signed_in? %>
+                <li class="nav-item d-none d-md-inline-block">
+                  <%= link_to current_user.email, root_path %>
+                </li>
+                <li class="nav-item d-none d-md-inline-block">
+                  <%= link_to '我的繪本', user_books_path %>
+                </li>
+                <li class="nav-item d-none d-md-inline-block">
+                  <%= link_to "登出", destroy_user_session_path, method: :delete %>
+                </li>
+              <% else %>
+                <li class="nav-item d-none d-md-inline-block">
+                  <%= link_to "登入", new_user_session_path %>
+                </li>
+                <li class="nav-item d-none d-md-inline-block">
+                  <%= link_to "註冊", new_user_registration_path %>
+                </li>
+              <% end %> -->
+              <!-- mobile view -->
+              <!--  <% if user_signed_in? %>
+                <li class="nav-item d-md-none">
+                  <%= link_to current_user.email, root_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item d-md-none">
+                  <%= link_to "登出", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+              <% else %>
+                <li class="nav-item d-md-none">
+                  <%= link_to "登入", new_user_session_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item d-md-none">
+                  <%= link_to "註冊", root_path, class: "nav-link" %>
+                </li>
+              <% end %> -->
+              <!-- Login Links end -->
+            </ul>
+          </nav>
+          <!-- mt icon list end here -->
+        </div>
       </div>
-    </li> -->
-  </ul>
-
-      <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbar">
-
-      <!-- Links -->
-      <ul class="nav navbar-nav ml-auto">
-        <% if admin_user_signed_in? %>
-          <li class="nav-item d-none d-md-block">
-            <%= link_to '首頁', root_path, class: "nav-link nav-link-item" %>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <em class="nav-link">Hi, <%= current_admin_user.email %></em>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item d-none d-md-block">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-        <!-- mobile view -->
-        <% if user_signed_in? %>
-          <li class="nav-item d-md-none">
-            <%= link_to current_user.email, root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item d-md-none">
-            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item d-md-none">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item d-md-none">
-            <%= link_to "Sign Up", root_path, class: "nav-link" %>
-          </li>
-         <% end %>
-      </ul>
-      <!-- Links -->
-
     </div>
-    <!-- Collapsible content -->
-
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <em class="nav-link"></em>
-    </li>
-  </ul>
-
-  <!-- <ul class="navbar-nav ml-auto">
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="index3.html" class="nav-link">Home</a>
-    </li>
-    <li class="nav-item">
-      <div class="theme-switch-wrapper nav-link">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </li>
-    <li class="nav-item">
-      <em class="nav-link">Enable Dark Mode!</em>
-    </li>
-  </ul> -->
-
-  <!-- SEARCH FORM -->
-  <!-- <form class="form-check-inline ml-3">
-    <div class="input-group input-group-sm">
-      <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-      <div class="input-group-append">
-        <button class="btn btn-navbar" type="submit">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
-    </div>
-  </form> -->
-</nav>
+  </div>
+  <!-- mt bottom bar end here -->
+  <span class="mt-side-over"></span>
+</header><!-- mt header style4 end here -->

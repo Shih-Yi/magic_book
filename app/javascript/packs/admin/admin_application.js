@@ -25,6 +25,7 @@ window.moment = moment
 
 // scss
 import "../../stylesheets/admin/admin_application"
+import '../../stylesheets/sessions'
 require.context('../../images', true)
 
 // custom js

@@ -6,13 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'admin/admin_application' %>
+    <%= javascript_pack_tag 'admin/admin_application' %>
   </head>
 
-  <body class="">
+  <body class="admin-login">
     <%= render 'shared/message' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/admin/navbar' %>
     <%= yield %>
   </body>
 </html>
