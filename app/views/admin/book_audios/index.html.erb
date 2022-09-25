@@ -32,11 +32,11 @@
               <table class="table table-bordered table-hover" id="the_datatable" width="100%">
                 <thead>
                   <tr>
-                    <th>繪本書名</th>
-                    <th>音檔</th>
-                    <th>上傳者</th>
-                    <th>上傳日期</th>
-                    <th>設定</th>
+                    <th class="table-col">繪本書名</th>
+                    <th class="table-col">音檔</th>
+                    <th class="table-col">上傳者</th>
+                    <th class="table-col">上傳日期</th>
+                    <th class="table-col">設定</th>
                   </tr>
                 </thead>
               </table>
@@ -92,13 +92,10 @@
         //   ; }},
         { "data": "book_title"},
         { "data": function (data, type, full, meta) {
-          console.log(data.file.url != null)
           let file_name = ''
           if(data.file.url != null){
             file_name = data.file.url.split("/")[2]
           }
-          console.log(data)
-          console.log(file_name)
         //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
           return '<span class="publish-type-' + data.id + ' ' + '">' + file_name + '</span>'
           ; }},

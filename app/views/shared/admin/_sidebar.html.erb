@@ -42,11 +42,18 @@
         <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
-          <a href="<% admin_root_path %>" class="nav-link treeview-link active">
+          <a href="<%= upload_page_admin_book_audios_path %>" class="nav-link treeview-link">
             <i class="nav-icon fas fa-book-reader"></i>
             <p>
-              音檔
-              <%# <i class="right fas fa-angle-left"></i> %>
+              音檔上傳
+            </p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="<%= admin_book_audios_path %>" class="nav-link treeview-link">
+            <i class="nav-icon fas fa-book-reader"></i>
+            <p>
+              全部音檔
             </p>
           </a>
           <!-- <a href="<% admin_root_path %>" class="nav-link treeview-link active">
