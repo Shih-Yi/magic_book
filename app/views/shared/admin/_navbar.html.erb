@@ -270,24 +270,24 @@
                 </div> %>
               </li>
               <!-- Login Links -->
-              <!--  <% if user_signed_in? %>
+              <% if admin_user_signed_in? %>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to current_user.email, root_path %>
+                  <%= link_to current_admin_user.email, admin_root_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to '我的繪本', user_books_path %>
+                  <%#= link_to '我的繪本', user_books_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
                   <%= link_to "登出", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "登入", new_user_session_path %>
+                  <%#= link_to "登入", new_user_session_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "註冊", new_user_registration_path %>
+                  <%#= link_to "註冊", new_user_registration_path %>
                 </li>
-              <% end %> -->
+              <% end %>
               <!-- mobile view -->
               <!--  <% if user_signed_in? %>
                 <li class="nav-item d-md-none">
