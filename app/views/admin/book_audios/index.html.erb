@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>音檔</h1>
+            <h1></h1>
           </div>
           <div class="col-sm-3">
             <ol class="breadcrumb float-sm-right">
@@ -56,6 +56,8 @@
   </div>
 
 <script>
+  let download_pic = '<%= image_pack_tag("media/images/download.png", class: "download-pic") %>'
+  let bin_pic = '<%= image_pack_tag("media/images/bin.png", class: "download-pic") %>'
   $(document).ready(function(){
     let table = $("#the_datatable").DataTable({
       responsive: true,
@@ -108,9 +110,8 @@
         //   ; }},
         { "data": "created_at"},
         { "data": function (data, type, full, meta) {
-          return '<a href="/admin/book_audios/' + data.id +'/edit"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
-          '<a href="/admin/book_audios/' + data.id +'/download_audio"><i class="far fa-edit fa-2x"></i></a>' + '  ' +
-          '<span class="book-destroy" data-id="' +  data.id + '"><i class="far fa-times-circle fa-2x"></i></span>'
+        return '<a href="/admin/book_audios/' + data.id +'/download_audio">' + download_pic + '</a>' + '  ' +
+          '<span class="book-destroy" data-id="' +  data.id + '">' + bin_pic + '</span>'
           ; }},
       ],
       "columnDefs": [
@@ -119,12 +120,19 @@
           className: 'text-center'
         }
       ],
-      // "columnDefs": [{
-      //   targets:4,
-      //   render: function(data){
-      //   return moment(data).format('DD/MM/YYYY HH:mm');
-      //   }}
+      // "columnDefs": [
+      //   {
+      //     targets: [4],
+      //     className: 'text-center',
+      //     "width": "20%",
+      //   }
       // ],
+      "columnDefs": [{
+        targets: [3],
+        render: function(data){
+        return moment(data).format('MM/DD/YYYY HH:mm');
+        }}
+      ],
     });
 
     // datetimepicker
