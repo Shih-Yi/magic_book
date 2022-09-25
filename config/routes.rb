@@ -30,6 +30,9 @@ Rails.application.routes.draw do
       member do
         get :download_audio
       end
+      collection do
+        get :upload_page
+      end
     end
   end
 end

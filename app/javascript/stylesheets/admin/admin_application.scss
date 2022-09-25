@@ -47,6 +47,19 @@ body.admin-login {
 	color: #707070;
 }
 
+// upload page
+.upload-container {
+	display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.login-header {
+	display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
 .file-upload {
   background-color: #ffffff;
   width: 600px;
@@ -1604,10 +1617,10 @@ a:focus {
 	letter-spacing: 1px;
 }
 
-#nav > ul > li > a:hover {
-	color: #ff6060;
-	text-decoration: none;
-}
+// #nav > ul > li > a:hover {
+// 	color: #ff6060;
+// 	text-decoration: none;
+// }
 
 #nav > ul > li.drop {
 	position: static;

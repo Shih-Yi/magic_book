@@ -42,6 +42,10 @@ class Admin::BookAudiosController < Admin::BaseController
     render status: 200, json: { result: '刪除成功' }
   end
 
+  def upload_page
+    @audio = BookAudio.new
+  end
+
   def download_audio
     if @audio.file.url.nil?
       flash[:alert] = "還沒上傳圖片"

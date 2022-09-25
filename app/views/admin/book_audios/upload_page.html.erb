@@ -1,0 +1,40 @@
+<div class="content-wrapper px-2 py-2">
+  <div id="wrapper" class="m-2 upload-container">
+    <div class="w1">
+      <main id="mt-main upload-container">
+        
+        <div class="container mt-5">
+          <div class="login-title text-center"></div>
+          <div class="login-content">
+            <div class="login-header ">
+              <h4><strong>音檔上傳</strong></h4>
+            </div>
+            <div class="login-body">
+              <%= form_for [:admin, @audio] do |f| %>
+                <div class="form-group">
+                  <div class="pos-r">
+                    <%= f.text_field :book_title, autofocus: true, autocomplete: "email", placeholder: "繪本書名：", class: "form-control" %>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="pos-r upload-file">
+                    <%= f.file_field :file, autocomplete: "current-password", placeholder: "音檔瀏覽：", class: "form-control" %>
+                  </div>
+                </div>
+                
+                <div class="form-group form-group-login">
+                <button type="submit" class="form-btn form-btn-login">
+                  <span>確認上傳</span>
+                </button>
+                </div>
+              <% end %>
+            </div>
+            <!-- end  login-body -->
+          </div><!-- end  login-content -->
+        </div><!-- end container -->
+
+      </div>
+    </div>
+  </div>
+</div>
