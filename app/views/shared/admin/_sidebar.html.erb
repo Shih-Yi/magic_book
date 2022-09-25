@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar elevation-4">
   <!-- Brand Logo  -->
   <!--
   <a href="index3.html" class="brand-link">
@@ -8,10 +8,7 @@
   </a> -->
 
   <a href="<%= admin_root_path %>" class="brand-link">
-    <span class="brand-icon">
-      <i class="fas fa-book"></i>
-    </span>
-    <span class="brand-text font-weight-light">Zizibooks Admin</span>
+    <span class="brand-text font-weight-light"><%= image_pack_tag "media/images/logo.png" %></span>
   </a>
 
   <!-- Sidebar -->
@@ -48,10 +45,17 @@
           <a href="<% admin_root_path %>" class="nav-link treeview-link active">
             <i class="nav-icon fas fa-book-reader"></i>
             <p>
-              Books
+              音檔
               <%# <i class="right fas fa-angle-left"></i> %>
             </p>
           </a>
+          <!-- <a href="<% admin_root_path %>" class="nav-link treeview-link active">
+            <i class="nav-icon fas fa-book-reader"></i>
+            <p>
+              Books
+              <%# <i class="right fas fa-angle-left"></i> %>
+            </p>
+          </a> -->
           <!-- <ul class="nav nav-treeview" style="display: none;">
             <%# Dish::TYPE.each do |type| %>
               <li class="nav-item">

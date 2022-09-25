@@ -23,6 +23,7 @@ window.Swal = Swal
 
 // scss
 import "../../stylesheets/admin/admin_application"
+require.context('../../images', true)
 
 // custom js
 import "./main"

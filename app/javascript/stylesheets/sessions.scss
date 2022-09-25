@@ -1,12 +1,12 @@
 body.login{
-  background: url(../image/bg-new.jpg) no-repeat center center;
+  background: url("~bg-new.jpg") no-repeat center center;
   -webkit-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
 }
 body.admin-login{
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../image/admin-bg.jpg) no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("~admin-bg.jpg") no-repeat center center;
   -webkit-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
