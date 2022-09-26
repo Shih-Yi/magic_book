@@ -94,7 +94,7 @@
         { "data": function (data, type, full, meta) {
           let file_name = ''
           if(data.file.url != null){
-            file_name = data.file.url.split("/")[2]
+            file_name = data.file.url.split("/")[5]
           }
         //   let publish_class = data.publish_type == 'published' ? 'bg-gradient-info' : 'bg-gradient-danger'
           return '<span class="publish-type-' + data.id + ' ' + '">' + file_name + '</span>'
