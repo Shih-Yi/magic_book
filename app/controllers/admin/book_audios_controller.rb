@@ -20,6 +20,7 @@ class Admin::BookAudiosController < Admin::BaseController
     @audio = BookAudio.new(book_audio_params)
     @audio.uploader_name = current_admin_user.email.split("@")[0]
     if @audio.save!
+      flash[:success] = "上傳成功"
       redirect_to admin_book_audios_path
     else
       render :action => :new
@@ -33,7 +34,7 @@ class Admin::BookAudiosController < Admin::BaseController
       flash[:danger] = e.message + "上傳失敗，圖片超過30MB"
       redirect_to admin_book_audios_path and return
     end
-    flash[:success] = "Successfully"
+    flash[:success] = "更新成功"
     redirect_to admin_book_audios_path
   end
 
