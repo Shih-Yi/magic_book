@@ -47,9 +47,25 @@ body.admin-login {
 	color: #707070;
 }
 
+.nav-logo {
+	width: 200px;
+}
+
+.music-icon {
+	width: 24px;
+	margin-right: 3px;
+}
+
+.icon-list-position {
+	position: absolute;
+	top: 50%;
+	left: 97%;
+	transform: translate(-50%,-50%);
+}
+
 // upload page
 .upload-container {
-	display: flex;
+  display: flex;
   justify-content: center; 
   align-items: center; 
 }
@@ -190,6 +206,10 @@ Wrapper / #wrapper
 
 #wrapper {
 	font-family: "Source Sans Pro", sans-serif;
+}
+
+.img-cover {
+	width: 100%;
 }
 
 img {

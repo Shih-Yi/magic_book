@@ -5,11 +5,26 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+
+          <%= image_pack_tag "media/images/logo.png", class: 'nav-logo' %>
+
           <!-- mt logo start here -->
           <%# <div class="mt-logo"><a href="#"><img src="images/mt-logo.png" alt="schon"></a></div> %>
           <!-- mt icon list start here -->
-          <ul class="mt-icon-list">
-            <%= image_pack_tag "media/images/admin.png" %>
+
+          <ul class="mt-icon-list icon-list-position btn-group dropleft">
+            <%= image_pack_tag "media/images/admin.png", class: "dropdown-toggle", 'data-toggle': "dropdown", "aria-haspopup": "true", "aria-expanded": "false", "data-offset": "50,0" %>
+              <% if admin_user_signed_in? %>
+                <div class="dropdown-menu">
+                  <!-- Dropdown menu links -->
+                  <div class="dropdown-item"><%= current_admin_user.email.split('@')[0]; %></div>
+                  <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" type="button">
+                    <%= link_to "登出", destroy_admin_user_session_path, method: :delete %>
+                  </button>
+                </div>
+              <% end %>
+           
             <!-- <li class="hidden-lg hidden-md">
               <a href="#" class="bar-opener mobile-toggle">
                 <span class="bar"></span>
@@ -272,13 +287,13 @@
               <!-- Login Links -->
               <% if admin_user_signed_in? %>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to current_admin_user.email, admin_root_path %>
+                  <%= link_to current_admin_user.email, admin_root_path %>, 您好
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
                   <%#= link_to '我的繪本', user_books_path %>
                 </li>
                 <li class="nav-item d-none d-md-inline-block">
-                  <%= link_to "登出", destroy_admin_user_session_path, method: :delete %>
+                  <%#= link_to "登出", destroy_admin_user_session_path, method: :delete %>
                 </li>
               <% else %>
                 <li class="nav-item d-none d-md-inline-block">
