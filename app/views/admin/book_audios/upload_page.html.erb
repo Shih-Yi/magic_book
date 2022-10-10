@@ -19,10 +19,17 @@
                 
                 <div class="form-group">
                   <div class="pos-r upload-file">
-                    <%= f.file_field :file, autocomplete: "current-password", placeholder: "音檔瀏覽：", class: "form-control" %>
+                    <label class="uploader">
+                      <%= f.file_field :file, autocomplete: "current-password", placeholder: "音檔瀏覽：", class: "form-control" %>
+                      <span class="custom-file-control">
+                        <span class="custom-file-control-button">
+                          <i class="far fa-folder-open"></i>
+                        </span>
+                      </span>
+                    </label>
                   </div>
                 </div>
-                
+
                 <div class="form-group form-group-login">
                 <button type="submit" class="form-btn form-btn-login">
                   <span>確認上傳</span>
@@ -38,3 +45,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.querySelectorAll('.uploader input[type="file"]').forEach((el) =>
+    el.addEventListener("change", (ev) => {
+      if (ev.target.files && ev.target.files.length) {
+        const text = Array.from(ev.target.files)
+          .map((x) => x.name)
+          .join(", ");
+        el.parentNode.querySelector(".custom-file-control").innerText = text;
+      }
+    })
+  );
+</script>

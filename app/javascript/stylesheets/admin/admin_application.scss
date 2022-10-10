@@ -40,7 +40,7 @@ body.admin-login {
 }
 
 .download-pic{
-  width: 20%;
+  width: 20px;
 }
 
 .table-col {
@@ -64,6 +64,53 @@ body.admin-login {
 }
 
 // upload page
+.upload-file {
+	height: 38px;
+	width: 300px;
+}
+
+.upload-file input[type="file"] {
+	display: none;
+	width: 300px;
+}
+
+.custom-file-control {
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 5;
+	height: calc(2.25rem + 2px);
+	padding: .5rem .75rem;
+	overflow: hidden;
+	line-height: 1.5;
+	color: #707070;
+	user-select: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #c0c0af;
+	border-radius: .25rem;
+}
+
+.custom-file-control-button {
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 6;
+	display: block;
+	height: calc(2.25rem + 2px);
+	padding: .5rem .75rem;
+	line-height: 1.25;
+	color: #333;
+	background-color: #EDEDE8;
+	border-left: 1px solid #c0c0af;
+	box-sizing: border-box;
+}
+
+
+		  
 .upload-container {
   display: flex;
   justify-content: center; 
