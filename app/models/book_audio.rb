@@ -11,7 +11,7 @@ class BookAudio < ApplicationRecord
   private
 
   def check_audio_size
-    if self.present? && self.file.size > 30_720_000
+    if self.present? && self.file.size > 51_200_000
       raise ActiveRecord::RecordInvalid.new(self)
     end
   end
